@@ -23,10 +23,10 @@ let s:p = {
 
 let s:p.normal.middle = [
       \ {'bg': s:mono1, 'fg': s:mono3}]
-let s:p.normal.left   = [
+let s:p.normal.left = [
       \ {'bg': s:mono3, 'fg': s:mono0},
       \ {'bg': s:mono2, 'fg': s:mono4}]
-let s:p.normal.right  = [
+let s:p.normal.right = [
       \ {'bg': s:mono3, 'fg': s:mono0},
       \ {'bg': s:mono3, 'fg': s:mono0}]
 
