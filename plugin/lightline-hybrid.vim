@@ -9,9 +9,10 @@ let s:mono2 = '#373b41'
 let s:mono3 = '#707880'
 let s:mono4 = '#c5c8c6'
 
-let s:red   = '#cc6666'
-let s:green = '#b5bd68'
-let s:blue  = '#81a2be'
+let s:red    = '#cc6666'
+let s:green  = '#b5bd68'
+let s:blue   = '#81a2be'
+let s:orange = '#de935f'
 
 
 let s:p = {
@@ -24,7 +25,7 @@ let s:p = {
 let s:p.normal.middle = [
       \ {'bg': s:mono1, 'fg': s:mono3}]
 let s:p.normal.left = [
-      \ {'bg': s:mono3, 'fg': s:mono0},
+      \ {'bg': s:green, 'fg': s:mono0},
       \ {'bg': s:mono2, 'fg': s:mono4}]
 let s:p.normal.right = [
       \ {'bg': s:mono3, 'fg': s:mono0},
@@ -46,7 +47,7 @@ let s:p.replace.left = [
       \ {'bg': s:red, 'fg': s:mono0},
       \ s:p.normal.left[1]]
 let s:p.visual.left = [
-      \ {'bg': s:green, 'fg': s:mono0},
+      \ {'bg': s:orange, 'fg': s:mono0},
       \ s:p.normal.left[1]]
 
 
