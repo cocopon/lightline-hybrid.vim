@@ -23,6 +23,19 @@ let g:lightline.colorscheme = 'hybrid'
 ```
 
 
+Screenshots
+-----------
+![default](http://cocopon.me/app/lightline-hybrid/img/default.png)
+
+If you prefer a simple one, how about a plain style?
+
+![plain](http://cocopon.me/app/lightline-hybrid/img/plain.png)
+
+```vim
+let g:lightline_hybrid_style = 'plain'
+```
+
+
 License
 -------
 MIT License.
