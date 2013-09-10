@@ -13,7 +13,7 @@ Put `lightline-hybrid.vim` into your plugin directory.
 
 Or if you are mad about [NeoBundle](https://github.com/Shougo/neobundle.vim), add the following line to your `.vimrc`:
 ```vim
-NeoBundle 'cocopon/lightline-hybrid'
+NeoBundle 'cocopon/lightline-hybrid.vim'
 ```
 
 Finally, set color scheme of lightline in `.vimrc`:
