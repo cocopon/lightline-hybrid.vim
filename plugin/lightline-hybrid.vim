@@ -16,55 +16,68 @@ let s:orange = '#de935f'
 
 
 let s:p = {
-      \ 'normal':   {},
-      \ 'inactive': {},
-      \ 'insert':   {},
-      \ 'replace':  {},
-      \ 'visual':   {}}
+			\ 'normal':   {},
+			\ 'inactive': {},
+			\ 'insert':   {},
+			\ 'replace':  {},
+			\ 'visual':   {}}
 
-let s:p.normal.middle = [
-      \ {'bg': s:mono1, 'fg': s:mono3}]
-let s:p.normal.left = [
-      \ {'bg': s:green, 'fg': s:mono0},
-      \ {'bg': s:mono2, 'fg': s:mono4}]
-let s:p.normal.right = [
-      \ {'bg': s:mono3, 'fg': s:mono0},
-      \ {'bg': s:mono3, 'fg': s:mono0}]
+let s:style = exists('g:lightline_hybrid_style')
+			\ ? g:lightline_hybrid_style
+			\ : ''
+
+if s:style == 'plain'
+	let s:p.normal.middle = [
+				\ {'bg': s:mono3, 'fg': s:mono2}]
+	let s:p.normal.left = [
+				\ {'bg': s:mono3, 'fg': s:mono0},
+				\ {'bg': s:mono3, 'fg': s:mono0}]
+	let s:p.normal.right = [
+				\ {'bg': s:mono3, 'fg': s:mono0},
+				\ {'bg': s:mono3, 'fg': s:mono0}]
+else
+	let s:p.normal.middle = [
+				\ {'bg': s:mono1, 'fg': s:mono3}]
+	let s:p.normal.left = [
+				\ {'bg': s:green, 'fg': s:mono0},
+				\ {'bg': s:mono2, 'fg': s:mono4}]
+	let s:p.normal.right = [
+				\ {'bg': s:mono3, 'fg': s:mono0},
+				\ {'bg': s:mono3, 'fg': s:mono0}]
+endif
 
 let s:p.inactive.middle = [
-      \ {'bg': s:mono1, 'fg': s:mono3}]
+			\ {'bg': s:mono1, 'fg': s:mono3}]
 let s:p.inactive.right = [
-      \ s:p.inactive.middle[0],
-      \ s:p.inactive.middle[0]]
+			\ s:p.inactive.middle[0],
+			\ s:p.inactive.middle[0]]
 let s:p.inactive.left = [
-      \ s:p.inactive.middle[0],
-      \ s:p.inactive.middle[0]]
+			\ s:p.inactive.middle[0],
+			\ s:p.inactive.middle[0]]
 
 let s:p.insert.left = [
-      \ {'bg': s:blue, 'fg': s:mono0},
-      \ s:p.normal.left[1]]
+			\ {'bg': s:blue, 'fg': s:mono0},
+			\ s:p.normal.left[1]]
 let s:p.replace.left = [
-      \ {'bg': s:red, 'fg': s:mono0},
-      \ s:p.normal.left[1]]
+			\ {'bg': s:red, 'fg': s:mono0},
+			\ s:p.normal.left[1]]
 let s:p.visual.left = [
-      \ {'bg': s:orange, 'fg': s:mono0},
-      \ s:p.normal.left[1]]
+			\ {'bg': s:orange, 'fg': s:mono0},
+			\ s:p.normal.left[1]]
 
 
 function! s:build_palette(p)
-  let p = copy(a:p)
+	let p = copy(a:p)
 
-  for mode in values(p)
-    for colors in values(mode)
-      for i in range(len(colors))
-        let colors[i] = [
-              \ colors[i].fg,
-              \ colors[i].bg]
-      endfor
-    endfor
-  endfor
+	for mode in values(p)
+		for colors in values(mode)
+			for i in range(len(colors))
+				let colors[i] = [colors[i].fg, colors[i].bg]
+			endfor
+		endfor
+	endfor
 
-  return lightline#colorscheme#fill(p)
+	return lightline#colorscheme#fill(p)
 endfunction
 
 
