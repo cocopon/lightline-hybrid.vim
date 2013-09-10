@@ -5,9 +5,10 @@
 " Color palette from vim-hybrid
 let s:mono0 = '#1d1f21'
 let s:mono1 = '#282a2e'
-let s:mono2 = '#373b41'
-let s:mono3 = '#707880'
-let s:mono4 = '#c5c8c6'
+let s:mono2 = '#303030'
+let s:mono3 = '#373b41'
+let s:mono4 = '#707880'
+let s:mono5 = '#c5c8c6'
 
 let s:red    = '#cc6666'
 let s:green  = '#b5bd68'
@@ -28,26 +29,26 @@ let s:style = exists('g:lightline_hybrid_style')
 
 if s:style == 'plain'
 	let s:p.normal.middle = [
-				\ {'bg': s:mono3, 'fg': s:mono2}]
+				\ {'bg': s:mono4, 'fg': s:mono3}]
 	let s:p.normal.left = [
-				\ {'bg': s:mono3, 'fg': s:mono0},
-				\ {'bg': s:mono3, 'fg': s:mono0}]
+				\ {'bg': s:mono4, 'fg': s:mono0},
+				\ {'bg': s:mono4, 'fg': s:mono0}]
 	let s:p.normal.right = [
-				\ {'bg': s:mono3, 'fg': s:mono0},
-				\ {'bg': s:mono3, 'fg': s:mono0}]
+				\ {'bg': s:mono4, 'fg': s:mono0},
+				\ {'bg': s:mono4, 'fg': s:mono0}]
 else
 	let s:p.normal.middle = [
-				\ {'bg': s:mono1, 'fg': s:mono3}]
+				\ {'bg': s:mono1, 'fg': s:mono4}]
 	let s:p.normal.left = [
 				\ {'bg': s:green, 'fg': s:mono0},
-				\ {'bg': s:mono2, 'fg': s:mono4}]
+				\ {'bg': s:mono3, 'fg': s:mono5}]
 	let s:p.normal.right = [
-				\ {'bg': s:mono3, 'fg': s:mono0},
-				\ {'bg': s:mono3, 'fg': s:mono0}]
+				\ {'bg': s:mono4, 'fg': s:mono0},
+				\ {'bg': s:mono4, 'fg': s:mono0}]
 endif
 
 let s:p.inactive.middle = [
-			\ {'bg': s:mono1, 'fg': s:mono3}]
+			\ {'bg': s:mono2, 'fg': s:mono4}]
 let s:p.inactive.right = [
 			\ s:p.inactive.middle[0],
 			\ s:p.inactive.middle[0]]
