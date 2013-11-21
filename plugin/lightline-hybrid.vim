@@ -21,7 +21,8 @@ let s:p = {
 			\ 'inactive': {},
 			\ 'insert':   {},
 			\ 'replace':  {},
-			\ 'visual':   {}}
+			\ 'visual':   {},
+			\ 'tabline':  {}}
 
 let s:style = exists('g:lightline_hybrid_style')
 			\ ? g:lightline_hybrid_style
@@ -64,6 +65,18 @@ let s:p.replace.left = [
 			\ s:p.normal.left[1]]
 let s:p.visual.left = [
 			\ {'bg': s:orange, 'fg': s:mono0},
+			\ s:p.normal.left[1]]
+
+let s:p.tabline.middle = [
+			\ s:p.normal.middle[0]]
+let s:p.tabline.right = [
+			\ s:p.normal.right[0],
+			\ s:p.normal.right[1]]
+let s:p.tabline.left = [
+			\ s:p.normal.middle[0],
+			\ s:p.normal.middle[0]]
+let s:p.tabline.tabsel = [
+			\ {'bg': s:green, 'fg': s:mono0},
 			\ s:p.normal.left[1]]
 
 
