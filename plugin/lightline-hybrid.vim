@@ -76,8 +76,7 @@ let s:p.tabline.left = [
 			\ s:p.normal.middle[0],
 			\ s:p.normal.middle[0]]
 let s:p.tabline.tabsel = [
-			\ {'bg': s:green, 'fg': s:mono0},
-			\ s:p.normal.left[1]]
+			\ {'bg': s:green, 'fg': s:mono0}]
 
 
 function! s:build_palette(p)
