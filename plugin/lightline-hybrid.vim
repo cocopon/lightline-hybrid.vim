@@ -67,15 +67,26 @@ let s:p.visual.left = [
 			\ {'bg': s:orange, 'fg': s:mono0},
 			\ s:p.normal.left[1]]
 
-let s:p.tabline.middle = [
-			\ {'bg': s:mono4, 'fg': s:mono0}]
-let s:p.tabline.right = [
-			\ {'bg': s:mono1, 'fg': s:mono4},
-			\ {'bg': s:mono4, 'fg': s:mono0}]
-let s:p.tabline.left = [
-			\ {'bg': s:mono1, 'fg': s:mono4}]
-let s:p.tabline.tabsel = [
-			\ {'bg': s:mono0, 'fg': s:mono5}]
+if s:style == 'plain'
+	let s:p.tabline.middle = [
+				\ {'bg': s:mono5, 'fg': s:mono0}]
+	let s:p.tabline.right = [
+				\ {'bg': s:mono5, 'fg': s:mono0}]
+	let s:p.tabline.left = [
+				\ {'bg': s:mono5, 'fg': s:mono0}]
+	let s:p.tabline.tabsel = [
+				\ {'bg': s:mono0, 'fg': s:mono5}]
+else
+	let s:p.tabline.middle = [
+				\ {'bg': s:mono4, 'fg': s:mono0}]
+	let s:p.tabline.right = [
+				\ {'bg': s:mono1, 'fg': s:mono4},
+				\ {'bg': s:mono4, 'fg': s:mono0}]
+	let s:p.tabline.left = [
+				\ {'bg': s:mono1, 'fg': s:mono4}]
+	let s:p.tabline.tabsel = [
+				\ {'bg': s:mono0, 'fg': s:mono5}]
+endif
 
 
 
