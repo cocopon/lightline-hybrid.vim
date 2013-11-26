@@ -68,15 +68,15 @@ let s:p.visual.left = [
 			\ s:p.normal.left[1]]
 
 let s:p.tabline.middle = [
-			\ s:p.normal.middle[0]]
+			\ {'bg': s:mono4, 'fg': s:mono0}]
 let s:p.tabline.right = [
-			\ s:p.normal.right[0],
-			\ s:p.normal.right[1]]
+			\ {'bg': s:mono1, 'fg': s:mono4},
+			\ {'bg': s:mono4, 'fg': s:mono0}]
 let s:p.tabline.left = [
-			\ s:p.normal.middle[0],
-			\ s:p.normal.middle[0]]
+			\ {'bg': s:mono1, 'fg': s:mono4}]
 let s:p.tabline.tabsel = [
-			\ {'bg': s:green, 'fg': s:mono0}]
+			\ {'bg': s:mono0, 'fg': s:mono5}]
+
 
 
 function! s:build_palette(p)
