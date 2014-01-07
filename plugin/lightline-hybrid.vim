@@ -28,28 +28,28 @@ let s:style = exists('g:lightline_hybrid_style')
 			\ ? g:lightline_hybrid_style
 			\ : ''
 
+" [[fg, bg], [fg, bg], ...]
 if s:style == 'plain'
-	let s:p.normal.middle = [
-				\ {'bg': s:mono4, 'fg': s:mono3}]
+	let s:p.normal.middle = [[s:mono3, s:mono4]]
 	let s:p.normal.left = [
-				\ {'bg': s:mono4, 'fg': s:mono0},
-				\ {'bg': s:mono4, 'fg': s:mono0}]
+				\ [s:mono0, s:mono4],
+				\ [s:mono0, s:mono4]]
 	let s:p.normal.right = [
-				\ {'bg': s:mono4, 'fg': s:mono0},
-				\ {'bg': s:mono4, 'fg': s:mono0}]
+				\ [s:mono0, s:mono4],
+				\ [s:mono0, s:mono4]]
 else
 	let s:p.normal.middle = [
-				\ {'bg': s:mono1, 'fg': s:mono4}]
+				\ [s:mono4, s:mono1]]
 	let s:p.normal.left = [
-				\ {'bg': s:green, 'fg': s:mono0},
-				\ {'bg': s:mono3, 'fg': s:mono5}]
+				\ [s:mono0, s:green],
+				\ [s:mono5, s:mono3]]
 	let s:p.normal.right = [
-				\ {'bg': s:mono4, 'fg': s:mono0},
-				\ {'bg': s:mono4, 'fg': s:mono0}]
+				\ [s:mono0, s:mono4],
+				\ [s:mono0, s:mono4]]
 endif
 
 let s:p.inactive.middle = [
-			\ {'bg': s:mono2, 'fg': s:mono4}]
+			\ [s:mono4, s:mono2]]
 let s:p.inactive.right = [
 			\ s:p.inactive.middle[0],
 			\ s:p.inactive.middle[0]]
@@ -58,51 +58,36 @@ let s:p.inactive.left = [
 			\ s:p.inactive.middle[0]]
 
 let s:p.insert.left = [
-			\ {'bg': s:blue, 'fg': s:mono0},
+			\ [s:mono0, s:blue],
 			\ s:p.normal.left[1]]
 let s:p.replace.left = [
-			\ {'bg': s:red, 'fg': s:mono0},
+			\ [s:mono0, s:red],
 			\ s:p.normal.left[1]]
 let s:p.visual.left = [
-			\ {'bg': s:orange, 'fg': s:mono0},
+			\ [s:mono0, s:orange],
 			\ s:p.normal.left[1]]
 
 if s:style == 'plain'
 	let s:p.tabline.middle = [
-				\ {'bg': s:mono5, 'fg': s:mono0}]
+				\ [s:mono0, s:mono5]]
 	let s:p.tabline.right = [
-				\ {'bg': s:mono5, 'fg': s:mono0}]
+				\ [s:mono0, s:mono5]]
 	let s:p.tabline.left = [
-				\ {'bg': s:mono5, 'fg': s:mono0}]
+				\ [s:mono0, s:mono5]]
 	let s:p.tabline.tabsel = [
-				\ {'bg': s:mono0, 'fg': s:mono5}]
+				\ [s:mono5, s:mono0]]
 else
 	let s:p.tabline.middle = [
-				\ {'bg': s:mono4, 'fg': s:mono0}]
+				\ [s:mono0, s:mono4]]
 	let s:p.tabline.right = [
-				\ {'bg': s:mono1, 'fg': s:mono4},
-				\ {'bg': s:mono4, 'fg': s:mono0}]
+				\ [s:mono4, s:mono1],
+				\ [s:mono0, s:mono4]]
 	let s:p.tabline.left = [
-				\ {'bg': s:mono1, 'fg': s:mono4}]
+				\ [s:mono4, s:mono1]]
 	let s:p.tabline.tabsel = [
-				\ {'bg': s:mono0, 'fg': s:mono5}]
+				\ [s:mono5, s:mono0]]
 endif
 
 
-
-function! s:build_palette(p)
-	let p = copy(a:p)
-
-	for mode in values(p)
-		for colors in values(mode)
-			for i in range(len(colors))
-				let colors[i] = [colors[i].fg, colors[i].bg]
-			endfor
-		endfor
-	endfor
-
-	return lightline#colorscheme#fill(p)
-endfunction
-
-
-let g:lightline#colorscheme#hybrid#palette = s:build_palette(s:p)
+let g:lightline#colorscheme#hybrid#palette =
+			\ lightline#colorscheme#fill(s:p)
