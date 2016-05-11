@@ -3,11 +3,19 @@
 
 
 " Color palette from vim-hybrid
-let s:mono0   = '#1d1f21'
-let s:mono1   = '#282a2e'
+if exists('g:hybrid_reduced_contrast') && g:hybrid_reduced_contrast == 1
+	let s:mono0 = '#232c31'
+	let s:mono1 = '#2d3c46'
+	let s:mono3 = '#425059'
+	let s:mono4 = '#6c7a80'
+else
+	let s:mono0 = '#1d1f21'
+	let s:mono1 = '#282a2e'
+	let s:mono3 = '#373b41'
+	let s:mono4 = '#707880'
+endif
+
 let s:mono2   = '#303030'
-let s:mono3   = '#373b41'
-let s:mono4   = '#707880'
 let s:mono5   = '#c5c8c6'
 let s:c_mono0 = 234
 let s:c_mono1 = 0
